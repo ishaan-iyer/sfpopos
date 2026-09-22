@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom";
 
 function POPOSSpace(props) {
-  const { name, image, address, hours, id } = props;
+  const { name, description, image, address, hours, id } = props;
+
+  const imageAlt = `${name} at ${address}. ${description.split('.')[0]}.`;
 
   return (
-    <div className="POPOSSpace">
-      <h1>
+    <article className="POPOSSpace">
+      <h2>
         <Link to={`/details/${id}`}>{name}</Link>
-      </h1>
+      </h2>
 
-      <Link to={`/details/${id}`}>
-        <img src={`/images/${image}`} width="300" height="300" alt={name} />
-      </Link>
+      <figure>
+        <Link to={`/details/${id}`} aria-label={`View details for ${name}`}>
+          <img src={`/images/${image}`} alt={imageAlt} />
+        </Link>
+        <figcaption>{address}</figcaption>
+      </figure>
 
-      <div>{address}</div>
-      <div>{hours}</div>
-    </div>
+      <p>{hours || 'Hours not listed'}</p>
+    </article>
   );
 }
 
