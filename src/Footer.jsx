@@ -1,9 +1,7 @@
-import "./Footer.css";
-
 function Footer() {
     return (
-        <footer className="Footer">
-            <p className="Footer-text">Ishaan Iyer copyright {new Date().getFullYear()}</p>
+        <footer className="mt-auto border-t border-[#262626] p-4 text-center">
+            <p className="m-0 text-sm">Ishaan Iyer copyright {new Date().getFullYear()}</p>
         </footer>
     );
 }

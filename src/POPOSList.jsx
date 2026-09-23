@@ -1,7 +1,5 @@
 import POPOSSpace from './POPOSSpace'
 
-import './POPOSList.css';
-
 import data from './sfpopos-data.json'
 
 
@@ -17,13 +15,13 @@ const spaces = data.map(({ title, desc, address, images, hours }, i) => {
       description={desc}
       address={address}
       image={images[0]}
-      hours={hours} // add a new prop for hours here
+      hours={hours}
     />
   )
 })
 
     return (
-        <div className="POPOSList">
+        <div className="mx-auto grid w-[calc(100%-2rem)] grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
             { spaces }
         </div>
     )

@@ -6,19 +6,19 @@ function POPOSSpace(props) {
   const imageAlt = `${name} at ${address}. ${description.split('.')[0]}.`;
 
   return (
-    <article className="POPOSSpace">
-      <h2>
+    <article className="w-full text-center">
+      <h2 className="text-2xl font-bold leading-tight">
         <Link to={`/details/${id}`}>{name}</Link>
       </h2>
 
-      <figure>
+      <figure className="m-0">
         <Link to={`/details/${id}`} aria-label={`View details for ${name}`}>
-          <img src={`/images/${image}`} alt={imageAlt} />
+          <img className="h-auto w-full" src={`/images/${image}`} alt={imageAlt} />
         </Link>
-        <figcaption>{address}</figcaption>
+        <figcaption className="mt-2">{address}</figcaption>
       </figure>
 
-      <p>{hours || 'Hours not listed'}</p>
+      <p className="mt-2">{hours || 'Hours not listed'}</p>
     </article>
   );
 }
